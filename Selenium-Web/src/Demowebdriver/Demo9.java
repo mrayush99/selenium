@@ -1,11 +1,13 @@
 package Demowebdriver;
 
 import java.util.ArrayList;
+//import java.util.Arrays;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+
 
 public class Demo9 {
 
@@ -13,7 +15,14 @@ public class Demo9 {
 		System.setProperty("webdriver.chrome.driver", "C:\\SeleniumFiles\\chromedriver_win32\\chromedriver.exe");
 		WebDriver cdriver=new ChromeDriver();
 		cdriver.manage().window().maximize();
-		cdriver.get("https://www.toolsqa.com/automation-practice-switch-windows/");
+		//cdriver.manage().deleteAllCookies();
+				
+		
+		
+		cdriver.get("https://www.toolsqa.com/");
+		Thread.sleep(3000);
+		cdriver.manage().deleteAllCookies();
+		Thread.sleep(3000);
 		String parentwindow=cdriver.getWindowHandle();
 		System.out.println("parent window"+ parentwindow);
 		WebElement clickbutton=cdriver.findElement(By.id("button1"));
